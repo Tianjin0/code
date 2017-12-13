@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 1000px;
+    }
+
+    .head {
+      width: 100%;
+      height: 100px;
+      background-color: yellow;
+    }
+
+    nav {
+      width: 100%;
+      height: 40px;
+      background-color: blue;
+    }
+
+    ul {
+      height: 40px;
+      width: 364px;
+      margin: auto;
+    }
+
+    li {
+      float: left;
+      list-style: none;
+      padding: 9px;
+    }
+
+    li:hover {
+      background-color: rgb(22, 22, 221);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head"></div>
+  <nav>
+    <ul>
+      <li>首页</li>
+      <li>动画</li>
+      <li>番剧</li>
+      <li>国创</li>
+      <li>音乐</li>
+      <li>舞蹈</li>
+      <li>游戏</li>
+    </ul>
+  </nav>
+  <div class="head"></div>
+</body>
+<script>
+  window.onload = function () {
+    var TJ = document.querySelector("nav");
+    console.log(TJ);
+    var navtop = TJ.offsetTop;
+    console.log(navtop);
+    window.onscroll = function () {
+      var navscroll = document.documentElement.scrollTop || window.pageYOffset;
+      console.log(navscroll);
+      if (navtop <= navscroll) {
+        TJ.style.position = "fixed"
+        TJ.style.top = 0;
+      } else {
+        TJ.style.position = "";
+        TJ.style.marginTop = 0 + "px";
+      }
+    }
+  }
+</script>
+
+</html>
